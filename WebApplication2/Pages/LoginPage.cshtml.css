@@ -1,0 +1,55 @@
+﻿
+
+.container-lg {
+    height: 100px;
+    background-color: #303434;
+    margin-top: 70px;
+    height: 420px;
+    border-radius: 80px;
+ 
+}
+.Sign {
+    text-decoration: none;
+}
+.linse {
+    background-color: white;
+    height: 2px;
+    margin-top: -10px;
+}
+.linse2 {
+    height: 2px;
+    background-color: black;
+    margin-top: -10px;
+}
+.forms {
+    background-color: #545E6A;
+    border:1px solid black;
+    border-radius: 15px;
+    width: 400px;
+    height: 50px;
+  
+   
+    border-width: 2px;
+    
+}
+
+.EmailText {
+   margin-left:-235px;
+    color: white;
+    
+}
+.PasswordText {
+    margin-left: -280px;
+    color: white;
+}
+.btn {
+    background-color:#18181A;
+    color: white;
+    width: 120px;
+    height: 50px;
+    border-radius: 30px;
+    font-size: 20px;
+}
+.btn:hover{
+    background-color: black;
+}
