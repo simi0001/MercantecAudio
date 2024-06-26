@@ -1,12 +1,9 @@
-﻿
-
-document.getElementById('fileInput').addEventListener('change', function (event) {
+﻿document.getElementById('fileInput').addEventListener('change', function (event) {
     var files = event.target.files;
     for (var i = 0; i < files.length; i++) {
         var file = files[i];
         var url = URL.createObjectURL(file);
         createVisualizer(url);
-        getPeakAmplitude(file, url);
     }
 });
 
@@ -34,8 +31,8 @@ function createVisualizer(audioSrc) {
         const WaveSurfer = module.default;
         const wavesurfer = WaveSurfer.create({
             container: waveformContainer, // Use the container for Wavesurfer.js visualization
-            waveColor: "black",
-            progressColor: "white",
+            waveColor: "Black",
+            progressColor: "Pink",
             backend: 'MediaElement', // Use the MediaElement backend to link to an audio tag
             mediaControls: true, // Show native media controls for the audio tag
             audioRate: 1, // Adjust playback speed if needed
@@ -76,7 +73,7 @@ function createVisualizer(audioSrc) {
     audioControls.appendChild(description);
 
     var tags = document.createElement("div");
-    tags.textContent = "lyd, musik, larm, dybt, godt, dyr, guitar og ai";
+    tags.textContent = "Tags";
     tags.classList.add("tags");
     tags.contentEditable = true;
     audioControls.appendChild(tags);
@@ -112,8 +109,6 @@ function createVisualizer(audioSrc) {
     container.appendChild(audioControls);
 }
 
-
-
 document.getElementById("myForm").addEventListener("submit", function (event) {
     const title = document.getElementById('title').value.trim();
     const tags = document.getElementById('tags').value.trim();
@@ -128,45 +123,6 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     else {
         alert("Filen er blevet sendt til Admin køen og venter på at blive godkendt, før den kan blive uploadet.");
     }
-});
-
-const express = require('express');
-const swaggerJsdoc = require('swagger-jsdoc');
-const swaggerUi = require('swagger-ui-express');
-
-const app = express();
-
-// Swagger setup
-const options = {
-    swaggerDefinition: {
-        swagger: '2.0', // This can be '2.0' for Swagger 2.0
-        info: {
-            title: 'Sample API',
-            version: '1.0.0',
-            description: 'API description in Markdown.'
-        },
-        servers: [
-            {
-                url: 'http://api.example.com/v1'
-            }
-        ]
-    },
-    apis: ['./routes/*.js'], // Path to the API routes files
-};
-
-const specs = swaggerJsdoc(options);
-
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
-
-// Your routes here
-app.get('/users', (req, res) => {
-    res.json({ message: 'List of users' });
-});
-
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
