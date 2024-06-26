@@ -112,33 +112,7 @@ function createVisualizer(audioSrc) {
     container.appendChild(audioControls);
 }
 
-async function getPeakAmplitude(file, audioSrc) {
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    const fileReader = new FileReader();
 
-    fileReader.onload = async function (event) {
-        const arrayBuffer = event.target.result;
-        const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-
-        const channelData = audioBuffer.getChannelData(0); // Use the first channel
-        let peak = 0;
-        for (let i = 0; i < channelData.length; i++) {
-            if (Math.abs(channelData[i]) > peak) {
-                peak = Math.abs(channelData[i]);
-            }
-        }
-
-        console.log('Peak Amplitude:', peak);
-
-        // Optionally display the peak amplitude in the UI
-        var peakDiv = document.createElement('div');
-        peakDiv.classList.add('peak-amplitude');
-        peakDiv.textContent = 'Peak Amplitude: ' + peak;
-        document.querySelector(`div.audio-container audio[src="${audioSrc}"]`).parentNode.appendChild(peakDiv);
-    };
-
-    fileReader.readAsArrayBuffer(file);
-}
 
 document.getElementById("myForm").addEventListener("submit", function (event) {
     const title = document.getElementById('title').value.trim();
