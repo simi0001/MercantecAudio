@@ -15,7 +15,7 @@
 
 </head>
 <body>
-
+    <!-- File input element to allow users to select multiple audio files -->
     <input type="file" id="fileInput" accept="audio/*" multiple>
     <div class="container">
         <div class="Lists1">
@@ -29,7 +29,7 @@
             <div class="Downloads">Download</div>
             <div class="CopyRights">CopyRight</div> *@
             <table>
-                <tr class="text-white">
+                <tr class="">
                     <th>Title</th>
                     <th>Description</th>
                     <th>Genre</th>
@@ -38,9 +38,7 @@
                     <th>CopyRight</th>
                 </tr>
                 <tr>
-                    <td>
-                        <div class="waveform" id="waveform"></div>
-                    </td>
+                    <div class="waveform" id="waveform"></div>
                 </tr>
             </table>
         </div>
@@ -76,10 +74,9 @@
         width: 1400px;
         margin-left: 100px;
         margin-right: -100px;
-        color: white;
     }
-
-    .Waveforms, .Titles, .descriptions, .Genres, .Categorys, .Downloads, .CopyRights {
+    /**/
+    .Waveforms {
         display: flex;
         align-items: center;
         padding: 0 10px;
@@ -87,6 +84,7 @@
 
     .title, .description, .tags, .category, .download-button, .logo {
         margin: 0 5px;
+        color: red;
     }
 
     .navbar-nav .nav-item .nav-link {
@@ -109,7 +107,7 @@
     }
 
     body {
-        background-color: #18181A;
+        background-color: #181919;
         padding-top: 70px;
     }
 
@@ -128,7 +126,7 @@
         margin-bottom: 20px;
         display: flex;
         align-items: center;
-        flex-wrap: wrap; /* Allow containers to wrap to the next line */
+        flex-wrap: wrap; 
 
 
 
@@ -138,7 +136,7 @@
 
 
     .download-button {
-        padding: 4px 8px; /* Adjust padding to make the button smaller */
+        padding: 4px 8px; 
         background-image: linear-gradient(#1B1B1B, #373737);
         color: White;
         border-style: solid;
@@ -148,8 +146,8 @@
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px; /* Adjust font size if needed */
-        margin-top: 20px; /* Adjust as needed */
+        font-size: 16px; 
+        margin-top: 20px; 
         margin-bottom: 20px;
         max-height: 40px;
         min-height: 40pX;
@@ -172,8 +170,8 @@
         max-width: 300px;
         margin-right: 10px;
         max-height: 120px;
-        white-space: pre-wrap; /* Preserve line breaks */
-        word-wrap: break-word; /* Break long words */
+        white-space: pre-wrap; 
+        word-wrap: break-word; 
     }
 
     .tags {
